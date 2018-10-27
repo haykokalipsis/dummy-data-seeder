@@ -3,6 +3,7 @@ $(document).ready(function () {
     const DATABASES = $('#databases');
     const TABLES = $('#tables');
     const TABLE_FIELDS = $('#tableFields');
+    const FORM = $('#form');
 
     var options;
 
@@ -19,7 +20,12 @@ $(document).ready(function () {
         getTablesFields(this.value);
     });
 
+    FORM.submit(function (event) {
+        insert(event);
+    });
+
     $(document).on('change', '.select-faker-field', function () {
+        console.log(this);
         selectFakerField($(this), options);
     });
 
@@ -238,8 +244,9 @@ $(document).ready(function () {
 
     }
 
-    $('#form').on('submit', function(e){
-        e.preventDefault();
+    function insert(event) {
+
+        event.preventDefault();
 
         let count = $('#count').val();
         let fields = [];
@@ -289,6 +296,6 @@ $(document).ready(function () {
             }
         });
         return false; // отменяем отправку формы, т.е. перезагрузку страницы
-    });
+    }
 
 });
