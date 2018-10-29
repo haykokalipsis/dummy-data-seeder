@@ -41,7 +41,6 @@ class Model
         }
     }
 
-    //TODO выдели куда нибудь отдельный массив с не нужными базами, и пользуй !in_array()
     public function get_databases()
     {
         $result = $this->pdo->query('SHOW DATABASES');
