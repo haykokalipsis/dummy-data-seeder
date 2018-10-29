@@ -165,14 +165,14 @@
             </div>
 
             <div class="panel-footer">
-                <input type="submit" class="btn btn-primary" id="generate" value="Generate">
+                <input type="submit" class="btn btn-primary" id="generate" value="Generate" style="display: none">
             </div>
 
         </form>
     </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script type="text/javascript" src="main-oop.js"></script>
+<script type="text/javascript" src="main.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 </body>
