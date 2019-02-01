@@ -159,6 +159,7 @@ class Model
     public function insert($fields, $count, $table)
     {
         $faker = Faker\Factory::create();
+        $rows = 0;
 
         $columns = implode(array_column($fields, 'column_name'), ', ');
         $valuesArray = array_column($fields, 'column_value');
@@ -197,10 +198,16 @@ class Model
                 $stmt->bindValue(":$key",$value, $type);
             }
 
-            $stmt->execute();
-        }
+            try {
+                if($stmt->execute() )
+                    $rows++;
+            } catch (PDOException $e) {
+                header('HTTP/1.0 500 Internal Server Error');
+                die($e->getMessage() );
+            }
 
-        return true;
+        }
+        return array('rows_affected' => $rows);
     }
 
 }

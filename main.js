@@ -184,15 +184,19 @@ class App
         $.ajax({
             type : 'POST',
             url : 'handler.php',
+            // contentType: "application/json; charset=utf-8",
             data : {action : 'insert', fields : jsonedFields, count : count, database : database, table : table},
-            dataType: 'html',
+            dataType: 'JSON',
 
             success: function(data) {
-                alert('Done');
+                console.info(data);
+                alert('Done, ' + data["rows_affected"] + ' rows added.');
                 App.BUTTON.attr('disabled', false);
             },
-            error: function (xhr, str) {
-                alert('Возникла ошибка: ' + xhr.responseCode + ', ' +str);
+            error: function(request, status, error) {
+                App.BUTTON.attr('disabled', false);
+                alert('Возникла ошибка: ' + status + ', ' + error);
+                console.log(request);
             }
         });
         return false; // отменяем отправку формы, т.е. перезагрузку страницы
@@ -212,7 +216,7 @@ class App
         let paramsDiv = $(field).closest('tr').find('.params');
         let exampleDiv = $(field).closest('tr').find('.example');
         let provider = $(field).find('option:selected').attr('provider').trim();
-        let fakerName = $(field).val().trim();
+        let fakerName = $(field).find('option:selected').text().trim();
         let parameters = options[provider][fakerName]["params"];
         let example = options[provider][fakerName]["example"];
 
@@ -317,7 +321,8 @@ class App
                 optgroup = $('<optgroup label=' + provider + '>');
                 select.append(optgroup);
                 $.each(fields, function (key, value) {
-                    optgroup.append($('<option>').attr({'provider' : provider,'value' : key }).text(key));
+                    let fakername = value.hasOwnProperty('fakername') ? value['fakername'] : key;
+                    optgroup.append($('<option>').attr({'provider' : provider,'value' : fakername }).text(key));
                 });
             });
 

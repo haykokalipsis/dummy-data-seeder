@@ -1,0 +1,102 @@
+company
+jobTitle
+firstNameFemale
+firstName()
+firstName
+firstNameFemale
+name()
+boolean
+address
+city
+colorName
+country
+dateTime
+dateTimeAD
+languageCode
+firstNameMale
+lastName
+phoneNumber
+month
+monthName
+streetName
+userName
+title
+titleMale
+titleFemale
+userName
+text
+sentence
+rand
+randomDigit
+randomDigitNotNull
+randomNumber($nbDigits = NULL, $strict = false)
+sentence
+randomFloat($nbMaxDecimals = NULL, $min = 0, $max = NULL)
+randomLetter
+randomElement($array = array ('a','b','c'))
+randomElements($array = array ('a','b','c'), $count = 1)
+shuffle('hello, world')
+shuffle(array(1, 2, 3))
+regexify('[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}');
+word
+words($nb = 3, $asText = false)
+sentence($nbWords = 6, $variableNbWords = true)
+sentences($nb = 3, $asText = false)
+paragraph($nbSentences = 3, $variableNbSentences = true)
+paragraphs($nb = 3, $asText = false)
+text($maxNbChars = 200)
+title($gender = null|'male'|'female')
+titleMale
+titleFemale
+suffix
+name($gender = null|'male'|'female')
+firstName($gender = null|'male'|'female')
+firstNameMale
+firstNameFemale
+lastName
+state
+buildingNumber
+city
+streetName
+streetAddress
+postcode
+address
+country
+company
+jobTitle
+realText($maxNbChars = 200, $indexSize = 2)
+freeEmailDomain
+safeEmailDomain
+userName
+password
+ipv4
+localIpv4
+ipv6
+macAddress
+creditCardType
+creditCardNumber
+creditCardExpirationDate
+creditCardExpirationDateString
+creditCardDetails
+hexcolor
+rgbcolor
+rgbColorAsArray
+rgbCssColor
+safeColorName
+colorName
+imageUrl($width = 640, $height = 480)
+imageUrl($width, $height, 'cats')
+imageUrl($width, $height, 'cats', true, 'Faker')
+imageUrl($width, $height, 'cats', true, 'Faker', true)
+image($dir = '/tmp', $width = 640, $height = 480)
+image($dir, $width, $height, 'cats')
+image($dir, $width, $height, 'cats', false)
+image($dir, $width, $height, 'cats', true, false)
+image($dir, $width, $height, 'cats', true, true, 'Faker')
+boolean
+boolean($chanceOfGettingTrue = 50)
+locale
+countryCode
+languageCode
+currencyCode
+emoji

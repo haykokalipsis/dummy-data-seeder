@@ -142,13 +142,13 @@
   "File" : {
     "fileExtension" : { "params" : [], "example" : "avi" },
     "mimeType" : { "params" : [], "example" : "video/x-msvideo" },
-    "file1" : { "params" : ["$sourceDir = '/tmp'", "$targetDir = '/tmp'"], "example" : "/path/to/targetDir/13b73edae8443990be1aa8f1a483bc27.jpg" },
-    "file2" : { "params" : ["$sourceDir", "$targetDir", false], "example" : "13b73edae8443990be1aa8f1a483bc27.jpg" }
+    "file1" : { "fakername" : "file", "params" : ["$sourceDir = '/tmp'", "$targetDir = '/tmp'"], "example" : "/path/to/targetDir/13b73edae8443990be1aa8f1a483bc27.jpg" },
+    "file2" : { "fakername" : "file", "params" : ["$sourceDir", "$targetDir", false], "example" : "13b73edae8443990be1aa8f1a483bc27.jpg" }
   },
   "Image" : {
     "imageUrl" : { "params" : ["$width", "$height", "'cats'", true, "'Faker'", true], "example" : "http://lorempixel.com/grey/800/400/cats/Faker/' Monochrome image" },
-    "image" : { "params" : ["$dir = '/tmp'", "$width = 640", "$height = 480"], "example" : "/tmp/13b73edae8443990be1aa8f1a483bc27.jpg" },
-    "image2" : { "params" : ["$dir", "$width", "$height", "'cats'", true, true, "'Faker'"], "example" : "tmp/13b73edae8443990be1aa8f1a483bc27.jpg it's a cat with 'Faker' text. Default, `null`." }
+    "image(Download image to $dir and insert)" : { "fakername" : "image", "params" : ["$dir = '/tmp'", "$width = 640", "$height = 480"], "example" : "/tmp/13b73edae8443990be1aa8f1a483bc27.jpg" },
+    "image" : { "fakername" : "image", "params" : ["$dir", "$width", "$height", "'cats'", true, true, "'Faker'"], "example" : "tmp/13b73edae8443990be1aa8f1a483bc27.jpg it's a cat with 'Faker' text. Default, `null`." }
   },
   "Uuid" : {
     "uuid" : { "params" : [], "example" : "7e57d004-2b97-0e7a-b45f-5387367791cd" }
@@ -160,8 +160,8 @@
     "isbn10" : { "params" : [], "example" : "4881416324" }
   },
   "Miscellaneous" : {
-    "boolean1" : { "params" : [], "example" : "false" },
-    "boolean2" : { "params" : ["$chanceOfGettingTrue = 50"], "example" : "true" },
+    "boolean1" : { "fakername" : "boolean", "params" : [], "example" : "false" },
+    "boolean2" : { "fakername" : "boolean", "params" : ["$chanceOfGettingTrue = 50"], "example" : "true" },
     "md5" : { "params" : [], "example" : "de99a620c50f2990e87144735cd357e7" },
     "sha1" : { "params" : [], "example" : "f08e7f04ca1a413807ebc47551a40a20a0b4de5c" },
     "sha256" : { "params" : [], "example" : "0061e4c60dac5c1d82db0135a42e00c89ae3a333e7c26485321f24348c7e98a5" },
